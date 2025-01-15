@@ -14,10 +14,14 @@ router.get("/", (req, res) => {
 });
 
 // Membuat routing alumni
-router.get("/alumni", AlumniController.index)
-router.post("/students", AlumniController.store);
-router.put("/students/:id", AlumniController.update);
-router.delete("/students/:id", AlumniController.destroy);
+router.get("/alumni", AlumniController.index);
+router.post("/alumni", AlumniController.store);
+router.put("/alumni/:id", AlumniController.update);
+router.delete("/alumni/:id", AlumniController.destroy);
+router.get("/alumni/:id", AlumniController.show);
+router.get("/alumni/search/:name", AlumniController.search);
+router.get("/alumni/status/fresh-graduate", AlumniController.freshGraduate);
+router.get("/alumni/status/employed", AlumniController.employed);
 
 // export router
 module.exports = router;
